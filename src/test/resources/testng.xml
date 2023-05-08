@@ -4,6 +4,7 @@
     <test name="Tests" >
         <classes>
             <class name="ru.portal.mypackage.tests.LoginTests" />
+            <class name="ru.portal.mypackage.tests.BlockUsersTests" />
         </classes>
     </test>
 </suite>

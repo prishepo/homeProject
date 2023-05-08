@@ -22,18 +22,12 @@ public class LoginTests extends TestBase{
     @Test
     public void testStudentLogin() throws InterruptedException {
 
-        app.wd.findElement(By.cssSelector("button.button._3TAJA")).click();
-
+       /* app.wd.findElement(By.cssSelector("button.button._3TAJA")).click();
         app.wd.findElement(By.id("username")).sendKeys("deadjust5@mail.ru");
         app.wd.findElement(By.id("password")).sendKeys("123qweasd");
-        app.wd.findElement(By.id("kc-login")).click();
-        Assert.assertTrue(app.wd.findElement(By.xpath("//span[contains(text(),'Степан')]")).isDisplayed());
-
-
-
-
+        app.wd.findElement(By.id("kc-login")).click();*/
+        Assert.assertTrue(app.wd.findElement(By.xpath("//span[contains(text(),'Stepan')]")).isDisplayed());
 
     }
-
 
 }

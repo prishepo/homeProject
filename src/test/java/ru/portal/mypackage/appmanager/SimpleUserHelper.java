@@ -9,7 +9,4 @@ public class SimpleUserHelper extends HelperBase{
 
 
 
-
-
-
 }

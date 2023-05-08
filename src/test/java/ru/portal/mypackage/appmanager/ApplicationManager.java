@@ -1,4 +1,5 @@
 package ru.portal.mypackage.appmanager;
+import com.beust.ah.A;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,6 +21,7 @@ public class ApplicationManager {
     private final Properties properties;
     public WebDriver wd;
     private SessionHelper sessionHelper;
+    private AdminHelper adminHelper;
 
     public ApplicationManager(String browser) {
         this.browser = browser;
@@ -51,7 +53,8 @@ public class ApplicationManager {
         wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
         wd.get(properties.getProperty("web.baseUrl"));
         sessionHelper = new SessionHelper(wd);
-   //     sessionHelper.login(properties.getProperty("web.adminLogin"), properties.getProperty("web.adminPassword"));
+        sessionHelper.login(properties.getProperty("web.adminLogin"), properties.getProperty("web.adminPassword"));
+        adminHelper = new AdminHelper(wd);
 
     }
 
@@ -62,6 +65,13 @@ public class ApplicationManager {
     public SessionHelper getSessionHelper() {
         return sessionHelper;
     }
+
+
+
+    public AdminHelper admin() {
+        return adminHelper;
+    }
+
 
 
 }
